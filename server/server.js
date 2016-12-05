@@ -4,8 +4,9 @@ var mongoose = require('mongoose');
 
 var app = express()
 
-app.use(express.static('client'))
-app.use('/lib', express.static('node_modules'))
+
+
+require('./routes.js')(app, express);
 
 app.listen(3000, function () {
   console.log('ETH DApps listening on port 3000!')
