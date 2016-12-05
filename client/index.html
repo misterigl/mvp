@@ -1,1 +1,17 @@
-hello world
+<!DOCTYPE html>
+<html lang="en" ng-app="ethDapp">
+  <head>
+  
+    <script src="lib/angular/angular.js"></script>
+    <script src="app/app.js"></script>
+  </head>
+  <body ng-controller="EthListController">
+    <ul>
+    <li ng-repeat="test in tests">
+      <p>{{test}}</p>
+    </li>
+  </ul>
+
+
+  </body>
+</html>
