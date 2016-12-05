@@ -17,28 +17,28 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  > Ethereum DApps
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  > Build decentralized apps with Ethereum
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > A guide through the Ethereum network and its possibilities to help developers building cool things together.
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > There are tons of awesome projects being developed on top of the Ethereum network, but many get lost in the noise. Another difficulty is the early stage of the blockchain ecosystem, so guides and documentation is rare.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > We help people to navigate through the jungle of decentralized apps and connect them with other developers with similar ideas. Additionally we provide resources to get them started.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > What are you interested in? Changes are that someone else somewhere is thinking about a similar idea and is looking for a partner with your skills. 
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > Query our database to see if there's a project you are interested in and start building things. If not, start one.
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > I didn't know how many cool DApps were out there.
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > Let's build the future together.
