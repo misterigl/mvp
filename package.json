@@ -1,0 +1,22 @@
+{
+  "name": "ethereum-dapps",
+  "version": "0.1.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/misterigl/hrsf50-mvp.git"
+  },
+  "author": "Michael Ilg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/misterigl/hrsf50-mvp/issues"
+  },
+  "homepage": "https://github.com/misterigl/hrsf50-mvp#readme",
+  "dependencies": {
+    "angular": "^1.5.9",
+    "express": "^4.14.0"
+  }
+}
