@@ -13,30 +13,33 @@ db.once('open', function() {
 });
 
 var ethDappSchema = mongoose.Schema({
-    name: String,
-    developer: String,
-    contact: {
-      website: String,
-      twitter: String
-    },
-    description: String,
-    updated: { type: Date, default: Date.now }
+  Name: String,
+  Description: String,
+  Site: String,
+  GitHub: String,
+  Reddit: String,
+  Developer: String,
+  Tags: String,
+  'License Platform': String,
+  Status: String,
+  'Last Update': String,
+  'Contract Address': String
 });
 
 var EthDapp = mongoose.model('EthDapp', ethDappSchema);
 
 // cleaning and populating the database with example data
 
-EthDapp.remove({}, function(err) { 
-   console.log('collection removed') 
-});
+// EthDapp.remove({}, function(err) { 
+//    console.log('collection removed') 
+// });
 
-for (var i = 0; i < EthDappsData.example.length; i++) {
-  new EthDapp(EthDappsData.example[i]).save(function (err, ethdapp) {
-    if (err) return console.error(err);
-    console.log(ethdapp.name + ' created at ' + ethdapp.updated)
-  });
-}
+// for (var i = 0; i < EthDappsData.example.length; i++) {
+//   new EthDapp(EthDappsData.example[i]).save(function (err, ethdapp) {
+//     if (err) return console.error(err);
+//     console.log(ethdapp.name + ' created at ' + ethdapp.updated)
+//   });
+// }
 
 // Server setup 
 
@@ -46,10 +49,15 @@ app.use(express.static('client'))
 app.use('/lib', express.static('node_modules'))
 
 app.get('/ethdapps', function (req, res) {
-  EthDapp.find({ description: {$regex: req.query.searchQuery, $options: 'g'}}, function(err, data) {
-    console.log(data);
-    res.send(200);
-  });
+  if (req.query.searchQuery === 'all') {
+    EthDapp.find(function (err, dappList) {
+      res.send(dappList);
+    });
+  } else {
+    EthDapp.find({ Description: {$regex: req.query.searchQuery, $options: 'g'}}, function(err, dappList) {
+      res.send(dappList);
+    });
+  }
 });
 
 app.get('/:test', function (req, res, next) {
