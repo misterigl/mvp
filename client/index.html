@@ -21,9 +21,9 @@
               <div class="md-list-item-text" layout="column">
                 <h3>{{dapp.Name}}</h3>
                 <p>{{dapp.Description}}</p>
-                <p ng-show='{{!!dapp.Site}}'>{{dapp.Site}}</p>
-                <p ng-show='{{!!dapp.Gitgub}}'>{{dapp.Gitgub}}</p>
-                <p ng-show='{{!!dapp.Developer}}'>{{dapp.Developer}}</p>
+                <p ng-show='{{!!dapp.Site}}'>Website: {{dapp.Site}}</p>
+                <p ng-show='{{!!dapp.GitHub}}'>Github: {{dapp.GitHub}}</p>
+                <p ng-show='{{!!dapp.Developer}}'>by {{dapp.Developer}}</p>
               </div>
             </md-list-item> 
           </md-list>
