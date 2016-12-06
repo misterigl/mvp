@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon server/server.js"
+    "start": "nodemon server/server.js",
+    "pretest": "node server/dbInit.js"
   },
   "repository": {
     "type": "git",

@@ -34,10 +34,10 @@ var EthDapp = mongoose.model('EthDapp', ethDappSchema);
 function makeDBgreatAgain () {
   var columns = ['Name', 'Description', 'Site', 'GitHub', 'Reddit', 'Who?', 'Tags', 'License', 'Platform', 'Status', 'Last Update', 'Contract Address'];
   csvToArray({
-     file: "./dapps.ethercasts.com.csv",
+     file: "./server/dapps.ethercasts.com.csv",
      columns: columns
   }, function (err, array) {
-    // console.log(err || array);
+    console.log(err || array);
     
     for (var i = 0; i < array.length; i++) {
       new EthDapp(array[i]).save(function (err, ethdapp) {
