@@ -30,7 +30,6 @@ bower_components/
 
 # Database
 db
-*.csv
 
 # Floobits
 .floo
