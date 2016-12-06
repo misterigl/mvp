@@ -1,4 +1,4 @@
-let ethDapp = angular.module('ethDapp', []);
+let ethDapp = angular.module('ethDapp', ['ngMaterial']);
 
 
 ethDapp.controller('EthListController', function EthListController($scope, $http) {

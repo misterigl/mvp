@@ -17,6 +17,9 @@
   "homepage": "https://github.com/misterigl/hrsf50-mvp#readme",
   "dependencies": {
     "angular": "^1.5.9",
+    "angular-animate": "^1.5.9",
+    "angular-aria": "^1.5.9",
+    "angular-material": "^1.1.1",
     "express": "^4.14.0",
     "mongoose": "^4.7.1"
   },
