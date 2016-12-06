@@ -19,7 +19,7 @@
             <md-list class="md-dense" flex>
               <md-subheader class="md-no-sticky">decentralized apps</md-subheader>
               <md-divider ></md-divider>
-              <md-list-item class="md-3-line" ng-repeat="dapp in dappList | filter:searchText" ng-click="null">
+              <md-list-item class="md-3-line" ng-repeat="dapp in dappList | filter:searchText" ng-click="findTweets(dapp.Name)">
                 <div class="md-list-item-text" layout="column">
                   <h3>{{dapp.Name}}</h3>
                   <p>{{dapp.Description}}</p>
