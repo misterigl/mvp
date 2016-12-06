@@ -6,7 +6,7 @@ ethDapp.controller('EthListController', function EthListController($scope, $http
   $http({
   method: 'GET',
   url: '/ethdapps',
-  params: {searchQuery: 'searchQuery123'}
+  params: {searchQuery: 'Golem'}
 }).then(function successCallback(response) {
   console.log('client', response);
   }, function errorCallback(response) {

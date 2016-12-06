@@ -14,7 +14,7 @@ var example = [
       website: 'ExampleString',
       twitter: 'ExampleString'
     },
-    description: 'ExampleString',
+    description: 'Golem is great',
     updated: '2016-12-06T00:14:36.796Z'
 },{
     name: 'uPort',
