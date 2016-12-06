@@ -1,5 +1,6 @@
 var express = require('express')
 var mongoose = require('mongoose');
+var Twitter = require('twitter');
 
 // DB setup
 
@@ -34,6 +35,8 @@ var app = express()
 app.use(express.static('client'))
 app.use('/lib', express.static('node_modules'))
 
+//routes
+
 app.get('/ethdapps', function (req, res) {
   if (req.query.searchQuery === 'all') {
     EthDapp.find(function (err, dappList) {
@@ -46,11 +49,16 @@ app.get('/ethdapps', function (req, res) {
   }
 });
 
-app.get('/:test', function (req, res, next) {
-  console.log(req.params.test);
-  res.sendStatus(200);
+app.get('/gettweets', function (req, res) {
+  console.log(req.query.searchQuery);
+  res.send([1,2,3,4]);
 });
-app.post('/anothertest', function() {});
+
+// app.get('/:test', function (req, res, next) {
+//   console.log(req.params.test);
+//   res.sendStatus(200);
+// });
+// app.post('/anothertest', function() {});
 
 app.listen(3000, function () {
   console.log('ETH Dapps listening on port 3000')

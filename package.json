@@ -23,7 +23,8 @@
     "angular-material": "^1.1.1",
     "express": "^4.14.0",
     "mongoose": "^4.7.1",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "twitter": "^1.5.0"
   },
   "devDependencies": {
     "csv-to-array": "^1.0.2"
