@@ -6,16 +6,14 @@
     <script src="app/app.js"></script>
   </head>
   <body ng-controller="EthListController">
-    <div>
-    <div ng-repeat="dapp in dappList">
+    <label>Filter: <input ng-model="searchText"></label><br>
+    <div ng-repeat="dapp in dappList | filter:searchText">
       <h3>{{dapp.Name}}</h3>
       <p>{{dapp.Description}}</p>
       <p ng-show='{{!!dapp.Site}}'>{{dapp.Site}}</p>
       <p ng-show='{{!!dapp.Gitgub}}'>{{dapp.Gitgub}}</p>
       <p ng-show='{{!!dapp.Developer}}'>{{dapp.Developer}}</p>
-      <p ng-show='{{!!dapp.contact.website}}'>{{dapp.contact}}</p>
     </div>
-  </div>
 
 
   </body>

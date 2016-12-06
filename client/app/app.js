@@ -6,9 +6,8 @@ ethDapp.controller('EthListController', function EthListController($scope, $http
   $http({
   method: 'GET',
   url: '/ethdapps',
-  params: {searchQuery: 'Ethereum'}
+  params: {searchQuery: 'all'}
 }).then(function successCallback(response) {
-  console.log('got response', response.data)
   $scope.dappList = response.data;
   }, function errorCallback(response) {
     console.log(response);
