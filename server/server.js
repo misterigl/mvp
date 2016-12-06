@@ -1,6 +1,5 @@
 var express = require('express')
 var mongoose = require('mongoose');
-var EthDappsData = require('./ethDappsData.js');
 
 // DB setup
 
@@ -27,19 +26,6 @@ var ethDappSchema = mongoose.Schema({
 });
 
 var EthDapp = mongoose.model('EthDapp', ethDappSchema);
-
-// cleaning and populating the database with example data
-
-// EthDapp.remove({}, function(err) { 
-//    console.log('collection removed') 
-// });
-
-// for (var i = 0; i < EthDappsData.example.length; i++) {
-//   new EthDapp(EthDappsData.example[i]).save(function (err, ethdapp) {
-//     if (err) return console.error(err);
-//     console.log(ethdapp.name + ' created at ' + ethdapp.updated)
-//   });
-// }
 
 // Server setup 
 

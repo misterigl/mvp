@@ -6,7 +6,7 @@ mongoose.connect('mongodb://localhost/ethdapps');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-  console.log('and we are connected to Mongo!');
+  console.log('Connected to Mongo');
 });
 
 var ethDappSchema = mongoose.Schema({
@@ -26,9 +26,9 @@ var ethDappSchema = mongoose.Schema({
 
 var EthDapp = mongoose.model('EthDapp', ethDappSchema);
 
-// EthDapp.remove({}, function(err) { 
-//      console.log('collection removed') 
-//     });
+EthDapp.remove({}, function(err) { 
+     console.log('removed old collection, now repopulating') 
+    });
 
 
 function makeDBgreatAgain () {
@@ -36,16 +36,13 @@ function makeDBgreatAgain () {
   csvToArray({
      file: "./server/dapps.ethercasts.com.csv",
      columns: columns
-  }, function (err, array) {
-    console.log(err || array);
-    
+  }, function (err, array) {    
     for (var i = 0; i < array.length; i++) {
       new EthDapp(array[i]).save(function (err, ethdapp) {
         if (err) return console.error(err);
         console.log(ethdapp.Name + ' created at ' + ethdapp['Last Update'])
-      });
+      });        
     }
-
   });
 }
 

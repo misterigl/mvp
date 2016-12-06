@@ -4,7 +4,7 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon server/server.js",
-    "pretest": "node server/dbInit.js"
+    "postinstall": "node server/dbInit.js"
   },
   "repository": {
     "type": "git",
