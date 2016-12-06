@@ -13,22 +13,39 @@
   <body ng-app="ethDapp">
     <div ng-controller="EthListController">
       <label>Filter: <input ng-model="searchText"></label><br>
-      <div flex-gt-sm="50" flex>
-        <md-content>
-          <md-list flex>
-            <md-subheader class="md-no-sticky">decentralized apps</md-subheader>
-            <md-list-item class="md-3-line" ng-repeat="dapp in dappList | filter:searchText" ng-click="null">
-              <div class="md-list-item-text" layout="column">
-                <h3>{{dapp.Name}}</h3>
-                <p>{{dapp.Description}}</p>
-                <p ng-show='{{!!dapp.Site}}'>Website: {{dapp.Site}}</p>
-                <p ng-show='{{!!dapp.GitHub}}'>Github: {{dapp.GitHub}}</p>
-                <p ng-show='{{!!dapp.Developer}}'>by {{dapp.Developer}}</p>
-              </div>
-            </md-list-item> 
-          </md-list>
-        </md-content>
-      </div>
+      <div ng-cloak layout-gt-sm="row" layout="column">
+        <div flex-gt-sm="50" flex>
+          <md-content>
+            <md-list class="md-dense" flex>
+              <md-subheader class="md-no-sticky">decentralized apps</md-subheader>
+              <md-divider ></md-divider>
+              <md-list-item class="md-3-line" ng-repeat="dapp in dappList | filter:searchText" ng-click="null">
+                <div class="md-list-item-text" layout="column">
+                  <h3>{{dapp.Name}}</h3>
+                  <p>{{dapp.Description}}</p>
+                  <p ng-show='{{!!dapp.Site}}'>Website: {{dapp.Site}}</p>
+                  <p ng-show='{{!!dapp.GitHub}}'>Github: {{dapp.GitHub}}</p>
+                  <p ng-show='{{!!dapp.Developer}}'>by {{dapp.Developer}}</p>
+                </div>
+              </md-list-item> 
+            </md-list>
+          </md-content>
+        </div>
+        <div ng-show='{{tweetList.length}}' flex-gt-sm="50" flex>  
+          <md-content>
+            <md-list class="md-dense" flex>
+              <md-subheader class="md-no-sticky">Tweets about {{}}</md-subheader>
+              <md-divider ></md-divider>
+              <md-list-item class="md-3-line" ng-repeat="tweet in tweetList">
+                <img ng-src="{{tweet.face}}?{{$index}}" class="md-avatar" alt="{{tweet.who}}" />
+                <div class="md-list-item-text" layout="column">
+                  <h3>{{tweet}}</h3>
+                </div>
+              </md-list-item>
+            </md-list>
+          </md-content>
+        </div>
+      </div>  
     </div>
 
   </body>
