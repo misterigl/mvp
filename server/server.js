@@ -1,6 +1,7 @@
 var express = require('express')
 var mongoose = require('mongoose');
 var Twitter = require('twitter');
+var keys = require('./keys.js');
 
 // DB setup
 
@@ -50,8 +51,9 @@ app.get('/ethdapps', function (req, res) {
 });
 
 app.get('/gettweets', function (req, res) {
-  console.log(req.query.searchQuery);
-  res.send([1,2,3,4]);
+  new Twitter(keys.twitter).get('search/tweets', {q: req.query.searchQuery}, function(err, tweets, response) {
+    (tweets.statuses && tweets.statuses.length) ? res.send(tweets.statuses) : res.send([{user: {name: 'no tweets found :('}}])
+  });
 });
 
 // app.get('/:test', function (req, res, next) {

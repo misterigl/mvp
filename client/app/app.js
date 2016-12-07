@@ -3,7 +3,7 @@ let ethDapp = angular.module('ethDapp', ['ngMaterial']);
 
 ethDapp.controller('EthListController', function EthListController($scope, $http) {
   $scope.dappList = [];
-  $scope.tweetList = ['no tweets yet'];
+  $scope.tweetList = [1];
 
   $scope.findTweets = (name) => {
     console.log('got clicked with ', name);

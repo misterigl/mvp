@@ -34,12 +34,13 @@
         <div ng-show='{{tweetList.length}}' flex-gt-sm="50" flex>  
           <md-content>
             <md-list class="md-dense" flex>
-              <md-subheader class="md-no-sticky">Tweets about {{}}</md-subheader>
+              <md-subheader class="md-no-sticky">Tweets</md-subheader>
               <md-divider ></md-divider>
               <md-list-item class="md-3-line" ng-repeat="tweet in tweetList">
-                <img ng-src="{{tweet.face}}?{{$index}}" class="md-avatar" alt="{{tweet.who}}" />
+                <img ng-src="{{tweet.user.profile_image_url}}" class="md-avatar" />
                 <div class="md-list-item-text" layout="column">
-                  <h3>{{tweet}}</h3>
+                  <h3>{{tweet.user.name}}</h3>
+                  <p>{{tweet.text}}</p>
                 </div>
               </md-list-item>
             </md-list>
